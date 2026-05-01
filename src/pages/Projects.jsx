@@ -45,7 +45,7 @@ export default function Projects() {
           {/* Grid */}
           <motion.div layout className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <AnimatePresence>
-              {filtered.map(({ title, description, tech, color, emoji, github, live }) => (
+              {filtered.map(({ title, description, tech, image, github, live }) => (
                 <motion.div
                   key={title}
                   layout
@@ -58,30 +58,27 @@ export default function Projects() {
                     shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
                 >
                   {/* Thumbnail */}
-                  <div className={`relative h-44 bg-gradient-to-br ${color} flex items-center justify-center text-6xl overflow-hidden`}>
-                    {emoji}
+                  <div className="relative h-48 overflow-hidden bg-gray-100 dark:bg-gray-700">
+                    <img
+                      src={image}
+                      alt={title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
+                    />
                     {/* Hover overlay */}
-                    <div className="absolute inset-0 bg-black/50 flex items-center justify-center gap-4
+                    <div className="absolute inset-0 bg-black/55 flex items-center justify-center gap-4
                       opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <a
-                        href={github}
-                        target="_blank"
-                        rel="noreferrer"
+                      <a href={github} target="_blank" rel="noreferrer"
                         className="flex items-center gap-1.5 px-4 py-2 rounded-lg bg-white text-gray-800
                           text-xs font-semibold hover:bg-gray-100 transition-colors"
-                        onClick={e => e.stopPropagation()}
-                      >
+                        onClick={e => e.stopPropagation()}>
                         <CodeBracketIcon className="w-4 h-4" /> Code
                       </a>
                       {live && (
-                        <a
-                          href={live}
-                          target="_blank"
-                          rel="noreferrer"
+                        <a href={live} target="_blank" rel="noreferrer"
                           className="flex items-center gap-1.5 px-4 py-2 rounded-lg bg-primary-500 text-white
                             text-xs font-semibold hover:bg-primary-600 transition-colors"
-                          onClick={e => e.stopPropagation()}
-                        >
+                          onClick={e => e.stopPropagation()}>
                           <ArrowTopRightOnSquareIcon className="w-4 h-4" /> Live
                         </a>
                       )}

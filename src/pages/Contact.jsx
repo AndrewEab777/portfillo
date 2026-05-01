@@ -72,7 +72,7 @@ export default function Contact() {
         <Container>
           <SectionHeader
             title="Get In Touch"
-            subtitle="Have a project in mind or just want to say hi? I'd love to hear from you."
+            subtitle="Got an idea? Reach out today and let's bring it to life — I'm available for an immediate response!"
           />
 
           <div className="grid lg:grid-cols-5 gap-10">

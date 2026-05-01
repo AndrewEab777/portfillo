@@ -344,19 +344,22 @@ export default function Home() {
           </motion.div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {featuredProjects.map(({ title, description, tech, color, emoji, github, live }, i) => (
+            {featuredProjects.map(({ title, description, tech, image, github, live }, i) => (
               <motion.div key={title} {...inView(i * 0.1)}
                 className="group bg-white dark:bg-gray-800 rounded-2xl overflow-hidden
                   border border-gray-100 dark:border-gray-700
                   shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
 
                 {/* thumbnail */}
-                <div className={`relative h-44 bg-gradient-to-br ${color}
-                  flex items-center justify-center text-6xl overflow-hidden`}>
-                  <span className="group-hover:scale-110 transition-transform duration-500">{emoji}</span>
-
+                <div className="relative h-44 overflow-hidden bg-gray-100 dark:bg-gray-700">
+                  <img
+                    src={image}
+                    alt={title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                  />
                   {/* hover overlay */}
-                  <div className="absolute inset-0 bg-black/50 flex items-center justify-center gap-3
+                  <div className="absolute inset-0 bg-black/55 flex items-center justify-center gap-3
                     opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <a href={github} target="_blank" rel="noreferrer"
                       className="flex items-center gap-1.5 px-4 py-2 rounded-lg bg-white
