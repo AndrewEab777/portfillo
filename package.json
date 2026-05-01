@@ -9,7 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview"
   },
-  "homepage": "https://andreweab777.github.io/portfillo"
+  "homepage": "https://andreweab777.github.io/portfillo",
   "dependencies": {
     "@heroicons/react": "^2.2.0",
     "framer-motion": "^12.38.0",
